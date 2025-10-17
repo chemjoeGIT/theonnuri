@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일 디버그</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .debug-info {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            z-index: 10000;
+        }
+        .highlight-overflow {
+            outline: 3px solid red !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        화면 너비: <span id="width"></span>px | 
+        스크롤 너비: <span id="scrollWidth"></span>px
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-layout">
+            <div class="about-text-content">
+                <h2 class="section-title">환영합니다</h2>
+                <p class="about-description">
+                    마하나임과 트리니티 중창단이 함께하는 2025 찬양예배에 여러분을 초대합니다.
+                </p>
+                
+                <!-- Mahaneim Section -->
+                <div class="choir-section mahaneim-section">
+                    <h3 class="choir-section-title">마하나임</h3>
+                    <div class="staff-grid-equal">
+                        <div class="staff-item-equal">
+                            <img src="images/leader-mahaneim.jpg" alt="마하나임 단장 김상래" class="staff-photo-equal">
+                            <p class="staff-label-equal">단장</p>
+                            <p class="staff-name-equal">김상래</p>
+                        </div>
+                        <div class="staff-item-equal">
+                            <img src="images/conductor-mahaneim.jpg" alt="김효성 지휘자" class="staff-photo-equal">
+                            <p class="staff-label-equal">지휘</p>
+                            <p class="staff-name-equal">김효성</p>
+                        </div>
+                        <div class="staff-item-equal">
+                            <img src="images/pianist-mahaneim.jpg" alt="유주이 반주자" class="staff-photo-equal">
+                            <p class="staff-label-equal">반주</p>
+                            <p class="staff-name-equal">유주이</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trinity Section -->
+                <div class="choir-section trinity-section">
+                    <h3 class="choir-section-title">트리니티</h3>
+                    <div class="staff-grid-equal">
+                        <div class="staff-item-equal">
+                            <img src="images/trinity-leader.jpg" alt="트리니티 단장" class="staff-photo-equal">
+                            <p class="staff-label-equal">단장</p>
+                            <p class="staff-name-equal">고영숙</p>
+                        </div>
+                        <div class="staff-item-equal">
+                            <img src="images/trinity-conductor.jpg" alt="추혜경 지도자" class="staff-photo-equal">
+                            <p class="staff-label-equal">지도</p>
+                            <p class="staff-name-equal">추혜경</p>
+                        </div>
+                        <div class="staff-item-equal">
+                            <img src="images/placeholder.jpg" alt="반주자" class="staff-photo-equal">
+                            <p class="staff-label-equal">반주</p>
+                            <p class="staff-name-equal">추후 공개</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function updateDebugInfo() {
+            document.getElementById('width').textContent = window.innerWidth;
+            document.getElementById('scrollWidth').textContent = document.body.scrollWidth;
+            
+            // 오버플로우 요소 찾기
+            const elements = document.querySelectorAll('*');
+            elements.forEach(el => {
+                if (el.scrollWidth > window.innerWidth) {
+                    el.classList.add('highlight-overflow');
+                    console.log('Overflow element:', el, 'scrollWidth:', el.scrollWidth);
+                }
+            });
+        }
+        
+        updateDebugInfo();
+        window.addEventListener('resize', updateDebugInfo);
+    </script>
+</body>
+</html>
+

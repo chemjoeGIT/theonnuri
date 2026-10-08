@@ -1811,44 +1811,18 @@ section {
 }
 
 .program-journey {
-    gap: 22px;
-    padding-left: 6px;
+    gap: 18px;
+    padding-left: 0;
 }
 
 .program-journey::before {
-    content: '';
-    position: absolute;
-    z-index: 0;
-    top: 42px;
-    bottom: 42px;
-    left: 28px;
-    width: 1px;
-    background: linear-gradient(to bottom, transparent 0%, var(--program-line) 6%, var(--program-line) 94%, transparent 100%);
+    content: none;
 }
 
 .stage-card {
     overflow: hidden;
-    padding: 34px 40px 34px 70px;
+    padding: 34px 40px;
     border-radius: 18px;
-}
-
-.stage-card .program-number {
-    top: 28px;
-    right: auto;
-    left: 12px;
-    z-index: 1;
-    display: grid;
-    width: 36px;
-    height: 36px;
-    place-items: center;
-    border: 1px solid currentColor;
-    border-radius: 50%;
-    background: var(--program-paper);
-    color: var(--primary-color);
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
 }
 
 .stage-card .program-header {
@@ -1918,9 +1892,14 @@ section {
 }
 
 .song-item-with-solo {
-    min-height: 92px;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 0;
     margin-bottom: 0;
-    padding: 14px 18px;
+    gap: 10px;
+    padding: 16px 18px;
 }
 
 .song-item:hover,
@@ -1945,13 +1924,14 @@ section {
 
 .solo-profiles-inline {
     display: flex;
+    width: 100%;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 8px;
 }
 
 .solo-profile-inline {
-    min-width: 142px;
+    min-width: 132px;
     border: 1px solid rgba(74, 144, 226, 0.12);
     border-radius: 10px;
     box-shadow: none;
@@ -1971,17 +1951,17 @@ section {
 }
 
 .featured-solo {
-    min-height: 112px;
+    min-height: 0;
 }
 
 .featured-solo .solo-profile-inline {
-    min-width: 170px;
+    min-width: 142px;
     border-color: rgba(184, 147, 79, 0.2);
 }
 
 .featured-solo .solo-photo-inline {
-    width: 66px;
-    height: 66px;
+    width: 56px;
+    height: 56px;
     border-color: var(--program-gold);
 }
 
@@ -1989,30 +1969,19 @@ section {
     color: var(--program-gold);
 }
 
-.performance-notes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 2px;
+.cellist-profile {
+    border-color: rgba(184, 147, 79, 0.28) !important;
 }
 
-.role-note {
-    display: inline-flex;
-    align-items: center;
-    min-height: 24px;
-    padding: 3px 9px;
-    border: 1px solid rgba(184, 147, 79, 0.22);
-    border-radius: 999px;
-    background: rgba(184, 147, 79, 0.08);
-    color: #876c3a;
-    font-size: 0.74rem;
-    font-weight: 600;
+.cellist-profile .solo-photo-inline {
+    width: 76px;
+    height: 56px;
+    border-color: var(--program-gold);
+    border-radius: 10px;
 }
 
-.instrument-note {
-    border-color: rgba(44, 62, 80, 0.12);
-    background: rgba(44, 62, 80, 0.05);
-    color: var(--primary-color);
+.cellist-profile .solo-photo-inline img {
+    object-position: 50% 28%;
 }
 
 .program-item.finale.theme-program {
@@ -2030,12 +1999,6 @@ section {
     border: 1px solid rgba(244, 228, 193, 0.52);
     background: rgba(255, 255, 255, 0.12);
     color: var(--white);
-}
-
-.theme-program .program-number {
-    border-color: rgba(244, 228, 193, 0.58);
-    background: #2f485d;
-    color: var(--accent-color);
 }
 
 .theme-label {
@@ -2076,18 +2039,11 @@ section {
     }
 
     .program-journey::before {
-        left: 23px;
+        content: none;
     }
 
     .stage-card {
-        padding: 28px 20px 28px 58px;
-    }
-
-    .stage-card .program-number {
-        top: 24px;
-        left: 6px;
-        width: 34px;
-        height: 34px;
+        padding: 28px 20px;
     }
 
     .stage-card .program-header {
@@ -2097,11 +2053,6 @@ section {
     .multiple-solos,
     .song-item-with-solo {
         align-items: flex-start;
-    }
-
-    .solo-profiles-inline {
-        width: 100%;
-        justify-content: flex-start;
     }
 
     .solo-profile-inline {
@@ -2125,15 +2076,7 @@ section {
     }
 
     .stage-card {
-        padding: 26px 16px 26px 50px;
-    }
-
-    .stage-card .program-number {
-        top: 22px;
-        left: 3px;
-        width: 31px;
-        height: 31px;
-        font-size: 0.62rem;
+        padding: 26px 16px;
     }
 
     .stage-card .program-title {
@@ -2174,10 +2117,6 @@ section {
         font-size: 0.61rem;
     }
 
-    .role-note {
-        font-size: 0.68rem;
-    }
-
     .multiple-solos .solo-profile-inline {
         flex: 1 1 calc(50% - 3px);
         flex-direction: column;
@@ -2199,5 +2138,15 @@ section {
     .multiple-solos .solo-part-inline {
         font-size: 0.56rem;
         white-space: nowrap;
+    }
+
+    .featured-lineup .solo-profile-inline {
+        min-width: 0;
+        flex: 1 1 calc(50% - 3px);
+    }
+
+    .cellist-profile .solo-photo-inline {
+        width: 62px;
+        height: 48px;
     }
 }

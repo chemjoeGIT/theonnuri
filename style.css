@@ -1769,3 +1769,435 @@ section {
     }
 }
 
+/* 2026 Program Refresh — quiet liturgical editorial layer */
+:root {
+    --program-gold: #b8934f;
+    --program-ink: #2c3e50;
+    --program-paper: #fffdf9;
+    --program-line: rgba(44, 62, 80, 0.15);
+}
+
+.program-heading {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 52px;
+    text-align: center;
+}
+
+.program-heading .section-title {
+    margin-bottom: 8px;
+}
+
+.program-eyebrow,
+.theme-label,
+.theme-song-label {
+    display: inline-block;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.program-eyebrow {
+    margin-bottom: 10px;
+    color: var(--program-gold);
+}
+
+.program-heading .section-subtitle {
+    margin-bottom: 0;
+    color: var(--program-ink);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.program-journey {
+    gap: 22px;
+    padding-left: 6px;
+}
+
+.program-journey::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 42px;
+    bottom: 42px;
+    left: 28px;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent 0%, var(--program-line) 6%, var(--program-line) 94%, transparent 100%);
+}
+
+.stage-card {
+    overflow: hidden;
+    padding: 34px 40px 34px 70px;
+    border-radius: 18px;
+}
+
+.stage-card .program-number {
+    top: 28px;
+    right: auto;
+    left: 12px;
+    z-index: 1;
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: var(--program-paper);
+    color: var(--primary-color);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.stage-card .program-header {
+    margin-bottom: 20px;
+}
+
+.stage-card .program-title {
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+}
+
+.stage-card .program-choir {
+    border-radius: 999px;
+    box-shadow: none;
+}
+
+.trinity-program {
+    border-left-color: var(--trinity-color);
+}
+
+.trinity-program .program-choir {
+    background: var(--trinity-color);
+}
+
+.trinity-program .program-title {
+    color: var(--primary-color);
+}
+
+.solo-program {
+    border-left-color: var(--program-gold);
+    background: linear-gradient(135deg, #fffaf0 0%, var(--white) 72%);
+}
+
+.solo-program .program-choir {
+    background: var(--program-gold);
+}
+
+.solo-program .program-title {
+    color: #876c3a;
+}
+
+.combined-program {
+    border-left-color: var(--primary-color);
+    background: linear-gradient(135deg, #f2f7fa 0%, var(--white) 72%);
+}
+
+.combined-program .program-choir {
+    background: var(--primary-color);
+}
+
+.combined-program .program-title {
+    color: var(--primary-color);
+}
+
+.program-songs {
+    gap: 12px;
+}
+
+.song-item,
+.song-item-with-solo {
+    border: 1px solid rgba(44, 62, 80, 0.05);
+    box-shadow: none;
+}
+
+.song-item {
+    padding: 14px 18px;
+}
+
+.song-item-with-solo {
+    min-height: 92px;
+    margin-bottom: 0;
+    padding: 14px 18px;
+}
+
+.song-item:hover,
+.song-item-with-solo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(44, 62, 80, 0.08);
+}
+
+.song-info {
+    min-width: 0;
+}
+
+.song-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.08rem;
+    font-weight: 700;
+}
+
+.song-composer {
+    font-size: 0.88rem;
+}
+
+.solo-profiles-inline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.solo-profile-inline {
+    min-width: 142px;
+    border: 1px solid rgba(74, 144, 226, 0.12);
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.solo-photo-inline {
+    border-width: 2px;
+}
+
+.solo-part-inline {
+    color: var(--mahaneim-color);
+    font-size: 0.68rem;
+}
+
+.solo-name-inline {
+    font-size: 0.95rem;
+}
+
+.featured-solo {
+    min-height: 112px;
+}
+
+.featured-solo .solo-profile-inline {
+    min-width: 170px;
+    border-color: rgba(184, 147, 79, 0.2);
+}
+
+.featured-solo .solo-photo-inline {
+    width: 66px;
+    height: 66px;
+    border-color: var(--program-gold);
+}
+
+.featured-solo .solo-part-inline {
+    color: var(--program-gold);
+}
+
+.performance-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.role-note {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 3px 9px;
+    border: 1px solid rgba(184, 147, 79, 0.22);
+    border-radius: 999px;
+    background: rgba(184, 147, 79, 0.08);
+    color: #876c3a;
+    font-size: 0.74rem;
+    font-weight: 600;
+}
+
+.instrument-note {
+    border-color: rgba(44, 62, 80, 0.12);
+    background: rgba(44, 62, 80, 0.05);
+    color: var(--primary-color);
+}
+
+.program-item.finale.theme-program {
+    border-left-color: var(--program-gold);
+    background: linear-gradient(135deg, #24384a 0%, #344f66 100%);
+    box-shadow: 0 12px 30px rgba(44, 62, 80, 0.18);
+}
+
+.theme-program .program-title,
+.theme-program .theme-song-name {
+    color: var(--white);
+}
+
+.theme-program .program-choir {
+    border: 1px solid rgba(244, 228, 193, 0.52);
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+}
+
+.theme-program .program-number {
+    border-color: rgba(244, 228, 193, 0.58);
+    background: #2f485d;
+    color: var(--accent-color);
+}
+
+.theme-label {
+    margin-bottom: 8px;
+    color: var(--accent-color);
+}
+
+.theme-song {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.theme-song-label {
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: rgba(244, 228, 193, 0.14);
+    color: var(--accent-color);
+    font-size: 0.64rem;
+}
+
+.theme-song-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .program-heading {
+        margin-bottom: 34px;
+    }
+
+    .program-journey {
+        gap: 16px;
+        padding-left: 0;
+    }
+
+    .program-journey::before {
+        left: 23px;
+    }
+
+    .stage-card {
+        padding: 28px 20px 28px 58px;
+    }
+
+    .stage-card .program-number {
+        top: 24px;
+        left: 6px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .stage-card .program-header {
+        gap: 10px;
+    }
+
+    .multiple-solos,
+    .song-item-with-solo {
+        align-items: flex-start;
+    }
+
+    .solo-profiles-inline {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .solo-profile-inline {
+        min-width: 136px;
+    }
+
+    .featured-solo .solo-profile-inline {
+        align-self: flex-start;
+    }
+
+    .theme-song {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+    }
+}
+
+@media (max-width: 480px) {
+    .program-heading .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .stage-card {
+        padding: 26px 16px 26px 50px;
+    }
+
+    .stage-card .program-number {
+        top: 22px;
+        left: 3px;
+        width: 31px;
+        height: 31px;
+        font-size: 0.62rem;
+    }
+
+    .stage-card .program-title {
+        font-size: 1.3rem;
+    }
+
+    .song-item,
+    .song-item-with-solo {
+        padding: 13px;
+    }
+
+    .solo-profiles-inline {
+        gap: 6px;
+    }
+
+    .solo-profile-inline {
+        min-width: 0;
+        flex: 1 1 132px;
+        gap: 8px;
+        padding: 7px;
+    }
+
+    .solo-photo-inline {
+        width: 48px;
+        height: 48px;
+    }
+
+    .featured-solo .solo-photo-inline {
+        width: 54px;
+        height: 54px;
+    }
+
+    .solo-name-inline {
+        font-size: 0.85rem;
+    }
+
+    .solo-part-inline {
+        font-size: 0.61rem;
+    }
+
+    .role-note {
+        font-size: 0.68rem;
+    }
+
+    .multiple-solos .solo-profile-inline {
+        flex: 1 1 calc(50% - 3px);
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 7px 4px;
+        text-align: center;
+    }
+
+    .multiple-solos .solo-info-inline {
+        align-items: center;
+    }
+
+    .multiple-solos .solo-photo-inline {
+        width: 42px;
+        height: 42px;
+    }
+
+    .multiple-solos .solo-part-inline {
+        font-size: 0.56rem;
+        white-space: nowrap;
+    }
+}

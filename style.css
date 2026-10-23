@@ -2002,9 +2002,11 @@ section {
 }
 
 .theme-song {
-    display: flex;
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
     align-items: center;
-    gap: 12px;
+    column-gap: 12px;
+    row-gap: 10px;
     padding-top: 18px;
     border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -2024,12 +2026,33 @@ section {
 }
 
 .theme-song-solo {
-    flex-basis: 100%;
-    margin-top: -4px;
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 0.84rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    grid-column: 1 / -1;
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 2px;
+    padding: 6px 11px;
+    border: 1px solid rgba(244, 228, 193, 0.72);
+    border-radius: 999px;
+    background: rgba(244, 228, 193, 0.14);
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    line-height: 1;
+}
+
+.theme-song-solo-label {
+    color: var(--accent-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.theme-song-solo strong {
+    color: var(--accent-color);
+    font-size: 0.98rem;
 }
 
 @media (max-width: 768px) {
@@ -2068,13 +2091,14 @@ section {
     }
 
     .theme-song {
+        display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 7px;
+        gap: 8px;
     }
 
     .theme-song-solo {
-        margin-top: 0;
+        margin-top: 2px;
     }
 }
 
